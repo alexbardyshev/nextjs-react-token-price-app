@@ -1,9 +1,9 @@
 import Head from 'next/head'
 
 import SearchBar from "../components/SerachBar/SearchBar";
-import Tokens from "../components/Tokens/Tokens";
+import TokensList from "../components/TokensList";
 
-export default function Home() {
+export default function Home({ filteredTokens }) {
   return (
     <div>
       <Head>
@@ -13,7 +13,17 @@ export default function Home() {
       </Head>
 
       <SearchBar />
-      <Tokens />
+      <TokensList filteredTokens={filteredTokens} />
     </div>
   )
+}
+
+export const getServerSideProps = async () => {
+    const res = await fetch('https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd&order=market_cap_desc&per_page=10&page=1&sparkline=false');
+
+    const filteredTokens = await res.json();
+
+    return {
+        props: { filteredTokens }
+    }
 }
