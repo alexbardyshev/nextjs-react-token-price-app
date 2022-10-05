@@ -1,15 +1,27 @@
-import Head from 'next/head'
-
+import {useState} from "react";
 import SearchBar from "../components/SerachBar/SearchBar";
 import TokensList from "../components/TokensList";
 import Layout from "../components/Layout";
 
 export default function Home({ filteredTokens }) {
-  return (
+    const [search, setSearch] = useState('');
+
+    const allTokens = filteredTokens.filter((token) => {
+        return token.name.toLowerCase().includes(search.toLowerCase());
+    });
+
+    const handleSearch = (e) => {
+        e.preventDefault();
+        setSearch(e.target.value.toLowerCase());
+    };
+
+    return (
     <Layout>
       <div className="token_app">
-          <SearchBar />
-          <TokensList filteredTokens={filteredTokens} />
+          <SearchBar
+              onChange={handleSearch}
+          />
+          <TokensList filteredTokens={allTokens} />
       </div>
     </Layout>
   )
