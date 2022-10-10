@@ -1,12 +1,12 @@
 import React from 'react';
 import styles from './SearchBar.module.css';
 
-const SearchBar = ( { onChange } ) => {
+const SearchBar = ( { type, placeholder,onChange } ) => {
     return (
         <div className={styles.token_search}>
             <input
-                type='text'
-                placeholder='Search'
+                type={type}
+                placeholder={placeholder}
                 className={styles.token_input}
                 onChange={onChange}
             />
