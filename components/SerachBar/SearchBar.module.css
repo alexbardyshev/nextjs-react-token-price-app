@@ -1,5 +1,5 @@
 .token_search {
-    margin-bottom: 64px;
+    margin-bottom: 24px;
     display: flex;
     align-items: center;
     width: 300px;
@@ -16,4 +16,12 @@
 
 .token_input::placeholder {
     color: #e2e2e2;
+}
+
+.token_select {
+    margin-bottom: 64px;
+    display: flex;
+    align-items: center;
+    width: 300px;
+    background: #222531;
 }

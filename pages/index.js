@@ -2,10 +2,13 @@ import {useEffect, useState} from "react";
 import SearchBar from "../components/SerachBar/SearchBar";
 import TokensList from "../components/TokensList";
 import Layout from "../components/Layout";
+import { useSelector, useDispatch } from 'react-redux'
+import {decrement, increment, selectValue} from '../slices/counterSlice'
 
 export default function Home({ filteredTokens }) {
     const [search, setSearch] = useState('');
     const [hydrated, setHydrated] = useState(false);
+
     useEffect(() => {
         setHydrated(true);
     }, []);
@@ -39,7 +42,11 @@ export default function Home({ filteredTokens }) {
 }
 
 export const getServerSideProps = async () => {
-    const res = await fetch('https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd&order=market_cap_desc&per_page=20&page=1&sparkline=false');
+    // const currency = useSelector(selectValue)
+    let currency = 'usd'
+    let url = 'https://api.coingecko.com/api/v3/coins/markets?vs_currency=' + currency + '&order=market_cap_desc&per_page=20&page=1&sparkline=false'
+
+    const res = await fetch(url);
 
     const filteredTokens = await res.json();
 

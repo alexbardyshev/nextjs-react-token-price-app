@@ -4,7 +4,7 @@ import Link from "next/link";
 
 export function Tokens( { name, price, symbol, marketcap, volume, image, priceChange, id } ) {
     return (
-        <Link href='/token/[id]' as={`/coins/${id}`}>
+        <Link href='/token/[id]' as={`/token/${id}`}>
             <a>
                 <div className={styles.token__container}>
                     <div className={styles.token__row}>

@@ -1,0 +1,36 @@
+.token_page {
+    display: flex;
+    justify-content: center;
+    height: 75vh;
+    align-items: center;
+}
+
+.token_container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid #2fffe5;
+    border-radius: 10px;
+    padding: 4rem;
+    width: 400px;
+}
+
+.token_image {
+    margin-bottom: 1rem;
+    width: 50px;
+    height: 50px;
+}
+
+.token_name {
+    margin-bottom: 1rem;
+}
+
+.token_ticker {
+    margin-bottom: 1rem;
+}
+
+.token_current {
+    margin-bottom: 1rem;
+    font-size: 2rem;
+}
