@@ -1,7 +1,7 @@
 import React from 'react';
 import styles from './SearchBar.module.css';
 import { useSelector, useDispatch } from "react-redux";
-import {decrement, increment, onChangeSelect, selectValue, setEur, setGbp, setUsd} from "../../slices/counterSlice";
+import {decrement, increment, onChangeSelect, selectValue, setEur, setGbp, setUsd} from "../../store/currencySlice";
 
 
 const SearchBar = ( { type, placeholder,onChange } ) => {
