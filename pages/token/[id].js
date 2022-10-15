@@ -1,4 +1,4 @@
-import Layout   from "../../components/Layout";
+import Layout   from "../../components/Layout/Layout";
 import styles from './Coin.module.css';
 
 const Token = ({ token }) => {

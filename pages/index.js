@@ -1,7 +1,7 @@
 import {useEffect, useState} from "react";
 import SearchBar from "../components/SerachBar/SearchBar";
 import TokensList from "../components/TokensList";
-import Layout from "../components/Layout";
+import Layout from "../components/Layout/Layout";
 import { useSelector, useDispatch } from 'react-redux'
 import {decrement, increment, selectValue} from '../slices/counterSlice'
 
