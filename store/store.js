@@ -1,7 +1,7 @@
 import { configureStore } from '@reduxjs/toolkit'
 import currencyReducer from './currencySlice'
 
-export const store = configureStore({
+export const makeStore = configureStore({
     reducer: {
         counter: currencyReducer,
     },
